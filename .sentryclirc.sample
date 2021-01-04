@@ -1,0 +1,7 @@
+[auth]
+token=xxxxxx
+
+[defaults]
+org=xx
+project=xx
+url=http://sentry.xx.com

@@ -1,0 +1,50 @@
+{
+	"private": true,
+	"scripts": {
+		"start": "umi dev",
+		"build": "umi build",
+		"umi-dev": "cross-env APP_RUNENV=local umi dev",
+		"umi-build": "umi build",
+		"start:dev": "cross-env UMI_ENV=dev yarn umi-dev",
+		"build:dev": "cross-env UMI_ENV=dev yarn umi-build",
+		"start:prod": "cross-env UMI_ENV=prod yarn umi-dev",
+		"build:prod": "cross-env UMI_ENV=prod yarn umi-build",
+		"postinstall": "umi generate tmp",
+		"prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+		"test": "umi-test",
+		"test:coverage": "umi-test --coverage"
+	},
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	},
+	"lint-staged": {
+		"*.{js,jsx,less,md,json}": [
+			"prettier --write"
+		],
+		"*.ts?(x)": [
+			"prettier --parser=typescript --write"
+		]
+	},
+	"dependencies": {
+		"@ant-design/pro-layout": "^6.5.0",
+		"@sentry/cli": "^1.61.0",
+		"@sentry/react": "^5.29.2",
+		"@sentry/tracing": "^5.29.2",
+		"@sentry/webpack-plugin": "^1.14.0",
+		"@umijs/preset-react": "1.x",
+		"cross-env": "^7.0.3",
+		"serve": "^11.3.2",
+		"umi": "^3.3.3"
+	},
+	"devDependencies": {
+		"@types/react": "^16.9.0",
+		"@types/react-dom": "^16.9.0",
+		"@umijs/test": "^3.3.3",
+		"lint-staged": "^10.0.7",
+		"prettier": "^2.2.0",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"typescript": "^4.1.2",
+		"yorkie": "^2.0.0"
+	}
+}
